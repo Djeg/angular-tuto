@@ -14,7 +14,8 @@ export class TodoListComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  onAddTodo(todo: string): void {
-    this.todoList.push(todo);
+  onAddTodo(): void {
+    this.todoList.push(this.newTodo);
+    this.newTodo = '';
   }
 }
