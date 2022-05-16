@@ -12,8 +12,12 @@ export class TodoListService {
     return this.list;
   }
 
-  add(todo: Todo): void {
-    this.list.push(todo);
+  add(label: string): void {
+    this.list.push({
+      id: this.list.length + 1,
+      label: label,
+      done: false,
+    });
   }
 
   remove(todo: Todo): void {

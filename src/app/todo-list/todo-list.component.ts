@@ -9,30 +9,13 @@ import { Todo, TodoList, TodoListService } from '../todo-list.service';
 export class TodoListComponent implements OnInit {
   public newTodo: string = '';
 
-  public todoList: TodoList = [
-    { id: 1, label: 'Faire les courses', done: false },
-  ];
-
-  //public todoService: TodoListService;
-
-  //constructor(todoService: TodoListService) {
-  //  this.todoService = todoService
-  //}
   constructor(public todoService: TodoListService) {}
 
   ngOnInit(): void {}
 
   onAddTodo(): void {
-    this.todoService.add({
-      id: this.todoService.all().length + 1,
-      label: this.newTodo,
-      done: false,
-    });
+    this.todoService.add(this.newTodo);
 
     this.newTodo = '';
-  }
-
-  deleteTodo(todo: Todo): void {
-    this.todoList = this.todoList.filter((t) => t.id !== todo.id);
   }
 }
