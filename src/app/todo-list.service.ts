@@ -24,13 +24,21 @@ export class TodoListService {
     this.list = this.list.filter((t) => t.id !== todo.id);
   }
 
-  check(todo: Todo): void {
-    this.list = this.list.map((t) => {
-      if (t.id !== todo.id) {
-        return todo;
+  check(receivedTodo: Todo): void {
+    this.list = this.list.map((todo) => {
+      // On test si t'id du todo sur lequel on boucle
+      // est identique au todo reçu en paramètre de notre
+      // méthode 'check'
+      if (todo.id === receivedTodo.id) {
+        // On retourne le todo auquel on change la
+        // propriété done (en utilisant la restructuration) :
+        return {
+          ...todo,
+          done: !todo.done,
+        };
       }
 
-      return { ...todo, done: !todo.done };
+      return todo;
     });
   }
 }
