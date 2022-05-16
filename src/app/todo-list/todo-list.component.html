@@ -1,2 +1,6 @@
-<input type="text" placeholder="Rentrez votre todo ..." />
-<button>Ajouter</button>
+<input type="text" placeholder="Rentrez votre todo ..." [(ngModel)]="newTodo" />
+<button (click)="onAddTodo(newTodo)">Ajouter</button>
+
+<ul>
+  <li *ngFor="let todo of todoList">{{todo}}</li>
+</ul>
