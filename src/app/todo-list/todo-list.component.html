@@ -2,5 +2,8 @@
 <button (click)="onAddTodo()">Ajouter</button>
 
 <ul>
-  <li *ngFor="let todo of todoList">{{todo}}</li>
+  <li *ngFor="let todo of todoList">
+    <p>{{todo.label}}</p>
+    <button (click)="deleteTodo(todo)">Supprimer</button>
+  </li>
 </ul>
