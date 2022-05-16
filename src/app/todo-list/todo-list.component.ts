@@ -13,6 +13,11 @@ export class TodoListComponent implements OnInit {
     { id: 1, label: 'Faire les courses', done: false },
   ];
 
+  //public todoService: TodoListService;
+
+  //constructor(todoService: TodoListService) {
+  //  this.todoService = todoService
+  //}
   constructor(public todoService: TodoListService) {}
 
   ngOnInit(): void {}

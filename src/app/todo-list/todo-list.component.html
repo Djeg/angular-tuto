@@ -2,7 +2,7 @@
 <button (click)="onAddTodo()">Ajouter</button>
 
 <ul>
-  <li *ngFor="let todo of todoList">
+  <li *ngFor="let todo of todoService.all()">
     <p>{{todo.label}}</p>
     <button (click)="deleteTodo(todo)">Supprimer</button>
   </li>
