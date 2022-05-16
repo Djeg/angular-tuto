@@ -1,10 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-type Todo = {
-  id: number;
-  label: string;
-  done: boolean;
-};
+import { Todo, TodoList } from '../todo-list.service';
 
 @Component({
   selector: 'app-todo-list',
@@ -14,7 +9,7 @@ type Todo = {
 export class TodoListComponent implements OnInit {
   public newTodo: string = '';
 
-  public todoList: Array<Todo> = [
+  public todoList: TodoList = [
     { id: 1, label: 'Faire les courses', done: false },
   ];
 
@@ -32,5 +27,7 @@ export class TodoListComponent implements OnInit {
     this.newTodo = '';
   }
 
-  deleteTodo(todo: Todo): void {}
+  deleteTodo(todo: Todo): void {
+    this.todoList = this.todoList.filter((t) => t.id !== todo.id);
+  }
 }
