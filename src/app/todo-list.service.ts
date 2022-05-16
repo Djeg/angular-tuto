@@ -7,6 +7,10 @@ export class TodoListService {
   private list: TodoList = [];
 
   constructor() {}
+
+  all(): TodoList {
+    return this.list;
+  }
 }
 
 export type Todo = {
