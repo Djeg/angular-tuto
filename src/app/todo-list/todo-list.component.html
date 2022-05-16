@@ -4,6 +4,6 @@
 <ul>
   <li *ngFor="let todo of todoService.all()">
     <p>{{todo.label}}</p>
-    <button (click)="deleteTodo(todo)">Supprimer</button>
+    <button (click)="todoService.remove(todo)">Supprimer</button>
   </li>
 </ul>

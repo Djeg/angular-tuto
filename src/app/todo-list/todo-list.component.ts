@@ -23,8 +23,8 @@ export class TodoListComponent implements OnInit {
   ngOnInit(): void {}
 
   onAddTodo(): void {
-    this.todoList.push({
-      id: this.todoList.length + 1,
+    this.todoService.add({
+      id: this.todoService.all().length + 1,
       label: this.newTodo,
       done: false,
     });
